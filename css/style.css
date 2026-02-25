@@ -203,18 +203,18 @@ input, textarea, select {
 .logo a {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 5px;
 }
 
 .logo img {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     object-fit: contain;
 }
 
 .logo-text {
     font-family: var(--font-heading);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--secondary-color);
 }
@@ -222,7 +222,8 @@ input, textarea, select {
 /* Navigation */
 .main-nav ul {
     display: flex;
-    gap: var(--spacing-lg);
+    flex-wrap: nowrap;
+    gap: 8px;
 }
 
 .main-nav a {
