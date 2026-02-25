@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catégorie - Wamstore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .category-hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-navy) 100%);
+            color: var(--white);
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        
+        .category-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+        }
+        
+        .category-content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: var(--spacing-xl);
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .filters-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            background: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .filter-section {
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .filter-section:last-child {
+            border-bottom: none;
+        }
+        
+        .filter-section h3 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            margin-bottom: var(--spacing-md);
+            color: var(--secondary-color);
+        }
+        
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .filter-option input {
+            cursor: pointer;
+        }
+        
+        .filter-option label {
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .results-count {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .sort-select {
+            padding: 10px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            background: var(--white);
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .sort-select:focus {
+            border-color: var(--primary-color);
+        }
+        
+        @media (max-width: 992px) {
+            .category-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-left">
+                    <a href="tel:+237674172225"><i class="fas fa-phone"></i> +237 674 172 225</a>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-shipping-fast"></i> <span data-translate="shipping">Livraison partout au Cameroun & International</span></span>
+                </div>
+                <div class="top-right">
+                    <a href="https://www.facebook.com/Wamsstore.Officiel/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://wa.me/237674172225" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.jpg" alt="Wamstore Logo">
+                        <span class="logo-text">Wamstore</span>
+                    </a>
+                </div>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li class="has-submenu">
+                            <a href="mode.html" data-translate="fashion">Mode & Style <i class="fas fa-chevron-down"></i></a>
+                        </li>
+                        <li><a href="category.html?cat=beauty" data-translate="beauty">Beauté & Bien-être</a></li>
+                        <li><a href="category.html?cat=home" data-translate="home">Maison & Déco</a></li>
+                        <li><a href="category.html?cat=tech" data-translate="tech">High-Tech</a></li>
+                        <li><a href="category.html?cat=food" data-translate="food">Alimentation</a></li>
+                        <li><a href="services.html" data-translate="services">Services Pro</a></li>
+                        <li><a href="wholesale.html" class="wholesale-link" data-translate="wholesale">Espace Grossiste</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Rechercher un produit..." data-translate-placeholder="search">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Hero -->
+    <section class="category-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span id="categoryBreadcrumb">Catégorie</span>
+            </div>
+            <h1 id="categoryTitle">Tous les produits</h1>
+        </div>
+    </section>
+
+    <!-- Category Content -->
+    <section class="category-content">
+        <div class="container" style="display: contents;">
+            <!-- Filters Sidebar -->
+            <aside class="filters-sidebar">
+                <div class="filter-section">
+                    <h3>Prix</h3>
+                    <div class="filter-option">
+                        <input type="checkbox" id="price1" value="0-10000">
+                        <label for="price1">Moins de 10 000 FCFA</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="price2" value="10000-30000">
+                        <label for="price2">10 000 - 30 000 FCFA</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="price3" value="30000-100000">
+                        <label for="price3">30 000 - 100 000 FCFA</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="price4" value="100000-">
+                        <label for="price4">Plus de 100 000 FCFA</label>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary btn-block" onclick="location.href='https://wa.me/237674172225'">
+                    <i class="fab fa-whatsapp"></i> Besoin d'aide ?
+                </button>
+            </aside>
+
+            <!-- Products Section -->
+            <div class="products-section">
+                <div class="products-header">
+                    <div class="results-count">
+                        <span id="resultsCount">0</span> produits trouvés
+                    </div>
+                    <select class="sort-select" id="sortSelect">
+                        <option value="featured">En vedette</option>
+                        <option value="price-low">Prix croissant</option>
+                        <option value="price-high">Prix décroissant</option>
+                        <option value="name">Nom A-Z</option>
+                    </select>
+                </div>
+                
+                <div class="products-grid" id="categoryProducts">
+                    <!-- Products loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Wamstore Logo">
+                        <h3>Wamstore</h3>
+                    </div>
+                    <p data-translate="footerDesc">Votre destination shopping au Cameroun.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/Wamsstore.Officiel/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/237674172225" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate="quickLinks">Liens rapides</h4>
+                    <ul>
+                        <li><a href="mode.html" data-translate="fashion">Mode & Style</a></li>
+                        <li><a href="services.html" data-translate="services">Services Pro</a></li>
+                        <li><a href="wholesale.html" data-translate="wholesale">Espace Grossiste</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate="customerService">Service client</h4>
+                    <ul>
+                        <li><a href="#" data-translate="contact">Contact</a></li>
+                        <li><a href="#" data-translate="delivery">Livraison</a></li>
+                        <li><a href="#" data-translate="faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate="contactUs">Contactez-nous</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +237 674 172 225</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Yaoundé, Cameroun</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wamstore. <span data-translate="rights">Tous droits réservés</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><span data-translate="myCart">Mon panier</span> (<span id="cartItemCount">0</span>)</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-translate="total">Total:</span>
+                <span id="cartTotal">0 FCFA</span>
+            </div>
+            <a href="https://wa.me/237674172225" class="btn btn-primary btn-block" target="_blank">
+                <i class="fab fa-whatsapp"></i> <span data-translate="orderWhatsapp">Commander via WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="close-mobile-menu" id="closeMobileMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="mode.html" data-translate="fashion">Mode & Style</a></li>
+                <li><a href="category.html?cat=beauty" data-translate="beauty">Beauté & Bien-être</a></li>
+                <li><a href="services.html" data-translate="services">Services Pro</a></li>
+                <li><a href="wholesale.html" data-translate="wholesale">Espace Grossiste</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <a href="https://wa.me/237674172225" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/translations.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Load category products
+        const category = getUrlParameter('cat') || 'all';
+        let currentProducts = getProductsByCategory(category);
+        
+        // Update page title
+        const categoryTitle = document.getElementById('categoryTitle');
+        const categoryBreadcrumb = document.getElementById('categoryBreadcrumb');
+        const lang = window.currentLang ? window.currentLang() : 'fr';
+        const catName = getCategoryName(category, lang);
+        
+        if (categoryTitle) categoryTitle.textContent = catName;
+        if (categoryBreadcrumb) categoryBreadcrumb.textContent = catName;
+        
+        // Display products
+        function displayProducts(products) {
+            const grid = document.getElementById('categoryProducts');
+            const count = document.getElementById('resultsCount');
+            
+            if (count) count.textContent = products.length;
+            
+            if (products.length === 0) {
+                grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 60px;">Aucun produit trouvé</p>';
+                return;
+            }
+            
+            grid.innerHTML = products.map(product => createProductCard(product)).join('');
+        }
+        
+        displayProducts(currentProducts);
+        
+        // Sort functionality
+        const sortSelect = document.getElementById('sortSelect');
+        if (sortSelect) {
+            sortSelect.addEventListener('change', (e) => {
+                const sortBy = e.target.value;
+                let sorted = [...currentProducts];
+                
+                switch(sortBy) {
+                    case 'price-low':
+                        sorted.sort((a, b) => a.price - b.price);
+                        break;
+                    case 'price-high':
+                        sorted.sort((a, b) => b.price - a.price);
+                        break;
+                    case 'name':
+                        sorted.sort((a, b) => a.name.localeCompare(b.name));
+                        break;
+                }
+                
+                displayProducts(sorted);
+            });
+        }
+        
+        // Price filter
+        document.querySelectorAll('.filter-option input').forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checkedPrices = Array.from(document.querySelectorAll('.filter-option input:checked'))
+                    .map(cb => cb.value);
+                
+                if (checkedPrices.length === 0) {
+                    displayProducts(currentProducts);
+                    return;
+                }
+                
+                const filtered = currentProducts.filter(product => {
+                    return checkedPrices.some(range => {
+                        const [min, max] = range.split('-').map(v => parseInt(v) || Infinity);
+                        return product.price >= min && product.price < max;
+                    });
+                });
+                
+                displayProducts(filtered);
+            });
+        });
+    </script>
+</body>
+</html>

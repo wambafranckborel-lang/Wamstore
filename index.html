@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wamstore - Mode, Cosmétique & Plus | E-commerce Cameroun</title>
+    <meta name="description" content="Wamstore - Votre destination shopping au Cameroun. Mode, beauté, high-tech, alimentation et services. Livraison dans tout le Cameroun et à l'international.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-left">
+                    <a href="tel:+237674172225"><i class="fas fa-phone"></i> +237 674 172 225</a>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-shipping-fast"></i> <span data-translate="shipping">Livraison partout au Cameroun & International</span></span>
+                </div>
+                <div class="top-right">
+                    <a href="https://www.facebook.com/Wamsstore.Officiel/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://wa.me/237674172225" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.jpg" alt="Wamstore Logo">
+                        <span class="logo-text">Wamstore</span>
+                    </a>
+                </div>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li class="has-submenu">
+                            <a href="mode.html" data-translate="fashion">Mode & Style <i class="fas fa-chevron-down"></i></a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-col">
+                                        <h3 data-translate="men">Hommes</h3>
+                                        <ul>
+                                            <li><a href="category.html?cat=men-clothing" data-translate="menClothing">Vêtements</a></li>
+                                            <li><a href="category.html?cat=men-shoes" data-translate="menShoes">Chaussures</a></li>
+                                            <li><a href="category.html?cat=men-accessories" data-translate="menAccessories">Accessoires</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col">
+                                        <h3 data-translate="women">Femmes</h3>
+                                        <ul>
+                                            <li><a href="category.html?cat=women-clothing" data-translate="womenClothing">Vêtements</a></li>
+                                            <li><a href="category.html?cat=women-shoes" data-translate="womenShoes">Chaussures</a></li>
+                                            <li><a href="category.html?cat=women-accessories" data-translate="womenAccessories">Accessoires</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col">
+                                        <h3 data-translate="kids">Enfants</h3>
+                                        <ul>
+                                            <li><a href="category.html?cat=kids-clothing" data-translate="kidsClothing">Vêtements</a></li>
+                                            <li><a href="category.html?cat=kids-shoes" data-translate="kidsShoes">Chaussures</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-col">
+                                        <h3 data-translate="accessories">Accessoires</h3>
+                                        <ul>
+                                            <li><a href="category.html?cat=bags" data-translate="bags">Sacs & Maroquinerie</a></li>
+                                            <li><a href="category.html?cat=jewelry" data-translate="jewelry">Bijoux & Montres</a></li>
+                                            <li><a href="category.html?cat=jerseys" data-translate="jerseys">Maillots de Foot</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="category.html?cat=beauty" data-translate="beauty">Beauté & Bien-être</a></li>
+                        <li><a href="category.html?cat=home" data-translate="home">Maison & Déco</a></li>
+                        <li><a href="category.html?cat=tech" data-translate="tech">High-Tech</a></li>
+                        <li><a href="category.html?cat=food" data-translate="food">Alimentation</a></li>
+                        <li><a href="services.html" data-translate="services">Services Pro</a></li>
+                        <li><a href="wholesale.html" class="wholesale-link" data-translate="wholesale">Espace Grossiste</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Rechercher un produit..." data-translate-placeholder="search">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h3>Menu</h3>
+            <button class="close-mobile-menu" id="closeMobileMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="mode.html" data-translate="fashion">Mode & Style</a></li>
+                <li><a href="category.html?cat=beauty" data-translate="beauty">Beauté & Bien-être</a></li>
+                <li><a href="category.html?cat=home" data-translate="home">Maison & Déco</a></li>
+                <li><a href="category.html?cat=tech" data-translate="tech">High-Tech</a></li>
+                <li><a href="category.html?cat=food" data-translate="food">Alimentation</a></li>
+                <li><a href="services.html" data-translate="services">Services Pro</a></li>
+                <li><a href="wholesale.html" data-translate="wholesale">Espace Grossiste</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-bg" style="background: linear-gradient(135deg, #1a1d2e 0%, #2d3142 100%);"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-label" data-translate="newCollection">Nouvelle Collection</span>
+                        <h1 class="hero-title">
+                            <span data-translate="heroTitle1">L'élégance</span><br>
+                            <span class="highlight" data-translate="heroTitle2">à portée de main</span>
+                        </h1>
+                        <p class="hero-description" data-translate="heroDesc">Découvrez notre sélection exclusive de mode, beauté et bien plus encore</p>
+                        <div class="hero-cta">
+                            <a href="mode.html" class="btn btn-primary" data-translate="shopNow">Découvrir</a>
+                            <a href="https://wa.me/237674172225" class="btn btn-outline" target="_blank">
+                                <i class="fab fa-whatsapp"></i> <span data-translate="contact">Nous contacter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Cards -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="shopByCategory">Acheter par catégorie</h2>
+            </div>
+            <div class="category-grid">
+                <a href="mode.html" class="category-card category-fashion">
+                    <div class="category-image">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3 data-translate="fashion">Mode & Style</h3>
+                    <p data-translate="fashionDesc">Vêtements, chaussures, accessoires</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="category.html?cat=beauty" class="category-card category-beauty">
+                    <div class="category-image">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 data-translate="beauty">Beauté & Bien-être</h3>
+                    <p data-translate="beautyDesc">Cosmétiques, parfums, soins</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="category.html?cat=home" class="category-card category-home">
+                    <div class="category-image">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3 data-translate="home">Maison & Déco</h3>
+                    <p data-translate="homeDesc">Meubles, décoration, électroménager</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="category.html?cat=tech" class="category-card category-tech">
+                    <div class="category-image">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 data-translate="tech">High-Tech</h3>
+                    <p data-translate="techDesc">Téléphones, ordinateurs, électronique</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="category.html?cat=food" class="category-card category-food">
+                    <div class="category-image">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 data-translate="food">Alimentation</h3>
+                    <p data-translate="foodDesc">Plats préparés, céréales, snacks</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="services.html" class="category-card category-services">
+                    <div class="category-image">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 data-translate="services">Services Pro</h3>
+                    <p data-translate="servicesDesc">Marketing, formations, pressing</p>
+                    <span class="category-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="featuredProducts">Produits en vedette</h2>
+                <a href="category.html" class="view-all" data-translate="viewAll">Voir tout <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="products-grid" id="featuredProductsGrid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Wholesale Banner -->
+    <section class="wholesale-banner">
+        <div class="container">
+            <div class="wholesale-content">
+                <div class="wholesale-text">
+                    <span class="wholesale-label" data-translate="forProfessionals">Pour les professionnels</span>
+                    <h2 data-translate="wholesaleTitle">Achetez en gros</h2>
+                    <p data-translate="wholesaleDesc">Bénéficiez de tarifs préférentiels pour vos achats en grande quantité</p>
+                    <a href="wholesale.html" class="btn btn-primary" data-translate="learnMore">En savoir plus</a>
+                </div>
+                <div class="wholesale-icon">
+                    <i class="fas fa-boxes"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="ourServices">Nos Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 data-translate="digitalMarketing">Marketing Digital</h3>
+                    <p data-translate="marketingDesc">Sites web, réseaux sociaux, publicité en ligne</p>
+                    <a href="services.html#marketing" class="service-link" data-translate="discover">Découvrir <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 data-translate="training">Formations</h3>
+                    <p data-translate="trainingDesc">Marketing digital, graphisme, création web</p>
+                    <a href="services.html#formation" class="service-link" data-translate="discover">Découvrir <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3 data-translate="pressing">Pressing Premium</h3>
+                    <p data-translate="pressingDesc">Ramassage, lavage, repassage, livraison</p>
+                    <a href="services.html#pressing" class="service-link" data-translate="discover">Découvrir <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-grid">
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 data-translate="fastDelivery">Livraison rapide</h3>
+                    <p data-translate="deliveryDesc">Dans tout le Cameroun et à l'international</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 data-translate="securePayment">Paiement sécurisé</h3>
+                    <p data-translate="paymentDesc">Via WhatsApp et Mobile Money</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 data-translate="support">Support 24/7</h3>
+                    <p data-translate="supportDesc">Notre équipe à votre écoute</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 data-translate="quality">Qualité garantie</h3>
+                    <p data-translate="qualityDesc">Produits authentiques et vérifiés</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Wamstore Logo">
+                        <h3>Wamstore</h3>
+                    </div>
+                    <p data-translate="footerDesc">Votre destination shopping au Cameroun. Mode, beauté, high-tech et plus encore.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/Wamsstore.Officiel/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/237674172225" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate="quickLinks">Liens rapides</h4>
+                    <ul>
+                        <li><a href="mode.html" data-translate="fashion">Mode & Style</a></li>
+                        <li><a href="category.html?cat=beauty" data-translate="beauty">Beauté & Bien-être</a></li>
+                        <li><a href="category.html?cat=tech" data-translate="tech">High-Tech</a></li>
+                        <li><a href="services.html" data-translate="services">Services Pro</a></li>
+                        <li><a href="wholesale.html" data-translate="wholesale">Espace Grossiste</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate="customerService">Service client</h4>
+                    <ul>
+                        <li><a href="#" data-translate="aboutUs">À propos</a></li>
+                        <li><a href="#" data-translate="delivery">Livraison</a></li>
+                        <li><a href="#" data-translate="returns">Retours</a></li>
+                        <li><a href="#" data-translate="faq">FAQ</a></li>
+                        <li><a href="#" data-translate="contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-translate="contactUs">Contactez-nous</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +237 674 172 225</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Yaoundé, Cameroun</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp disponible</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wamstore. <span data-translate="rights">Tous droits réservés</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Popup -->
+    <div class="whatsapp-popup" id="whatsappPopup">
+        <div class="popup-content">
+            <button class="close-popup" id="closePopup">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="popup-header">
+                <i class="fab fa-whatsapp"></i>
+                <h3 data-translate="joinWhatsapp">Rejoignez notre groupe WhatsApp</h3>
+            </div>
+            <p data-translate="whatsappDesc">Recevez nos offres exclusives, nouveautés et promotions en temps réel !</p>
+            <form id="whatsappForm">
+                <input type="tel" id="phoneInput" placeholder="+237 6XX XXX XXX" data-translate-placeholder="phone" required>
+                <button type="submit" class="btn btn-primary" data-translate="join">Rejoindre maintenant</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><span data-translate="myCart">Mon panier</span> (<span id="cartItemCount">0</span>)</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-translate="total">Total:</span>
+                <span id="cartTotal">0 FCFA</span>
+            </div>
+            <a href="https://wa.me/237674172225?text=Bonjour%2C%20je%20souhaite%20passer%20commande" class="btn btn-primary btn-block" target="_blank">
+                <i class="fab fa-whatsapp"></i> <span data-translate="orderWhatsapp">Commander via WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/237674172225" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/translations.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
